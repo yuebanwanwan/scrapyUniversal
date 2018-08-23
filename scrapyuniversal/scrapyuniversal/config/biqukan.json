@@ -1,0 +1,42 @@
+{
+  "spider":"universal",
+  "website":"笔趣阁",
+  "type":"网文",
+  "index":"biqukan.com",
+  "settings":{
+    "User-Agent":"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36"
+  },
+  "start_urls":["http://www.biqukan.com/1_1434/17323999.html"],
+  "allowed_domains":["biqukan.com"],
+  "rules":"biqukan",
+  "item":{
+    "class":"DadaochaotianItem",
+    "loader":"DaDaoChaoTianLoader",
+    "attrs":{
+      "title":[
+        {
+          "method":"xpath",
+          "args":[
+            "//title/text()"
+          ]
+        }
+      ],
+      "url":[
+        {
+          "method":"attr",
+          "args":[
+            "url"
+          ]
+        }
+      ],
+      "text":[
+        {
+          "method":"xpath",
+          "args":[
+            "//div[@class='showtxt']/text()"
+          ]
+        }
+      ]
+    }
+  }
+}
